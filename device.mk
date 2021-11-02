@@ -19,7 +19,7 @@
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-LOCAL_PATH := device/realme/RMX2076L1
+LOCAL_PATH := device/xiaomi/umi
 
 # Qcom Decryption
 PRODUCT_PACKAGES_ENG += \
