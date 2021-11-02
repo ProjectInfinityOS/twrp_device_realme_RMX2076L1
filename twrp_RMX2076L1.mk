@@ -19,14 +19,14 @@ PRODUCT_RELEASE_NAME := RMX2076L1
 DEVICE_PATH := device/realme/RMX2076L1
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from device
 $(call inherit-product, device/realme/RMX2076L1/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX2076L1
-PRODUCT_NAME := omni_RMX2076L1
+PRODUCT_NAME := twrp_RMX2076L1
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2076
 PRODUCT_MANUFACTURER := realme

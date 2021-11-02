@@ -155,6 +155,6 @@ TW_OZIP_DECRYPT_KEY := "1C4C1EA3A12531AE491B21BB31613C11"
 # TW_DEVICE_VERSION := harshaxvarthan
 # PLATFORM_VERSION := 16.1.0
 
-# BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
-# --prop com.android.build.boot.os_version:$(PLATFORM_VERSION) \
-# --prop com.android.build.boot.security_patch:$(PLATFORM_SECURITY_PATCH)
+BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
+ --prop com.android.build.boot.os_version:$(PLATFORM_VERSION) \
+ --prop com.android.build.boot.security_patch:$(PLATFORM_SECURITY_PATCH)
