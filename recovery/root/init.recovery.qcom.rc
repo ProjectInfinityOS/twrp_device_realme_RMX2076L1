@@ -24,25 +24,15 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-
-on init
-    write /sys/class/backlight/panel0-backlight/brightness 200
-    setprop sys.usb.configfs 1
-    #ifdef VENDO_EDIT
-    #Shuangquan.du@PSW.AD.Recovery.0, 2019/08/22, Add for fastbood in recovery mode
-    mkdir /config/usb_gadget/g1/functions/ffs.fastboot
-    #endif
-
-on property:ro.boot.usbcontroller=*
-    setprop sys.usb.controller ${ro.boot.usbcontroller}
-    #ifdef OPLUS_FEATURE_OTAPACKAGE_UPDATER
-    #Shuangquan.du@PSW.AD.Recovery.0, 2020/08/17, Add for otg flash
-    #write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
-    #endif /*OPLUS_FEATURE_OTAPACKAGE_UPDATER*/
+ 
+ import /init.recovery.qcom_decrypt.rc
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on init
+    setprop vendor.gatekeeper.disable_spu true
 
 #ifdef OPLUS_FEATURE_OTAPACKAGE_UPDATER
 #Shuangquan.du@PSW.AD.Recovery.0, 2020/08/17, Add for otg flash
