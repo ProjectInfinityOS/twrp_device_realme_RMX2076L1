@@ -21,6 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 LOCAL_PATH := device/xiaomi/umi
 
+# Qcom Decryption
+PRODUCT_PACKAGES_ENG += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
